@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export default styled.div`
     height: 100vh;
     overflow: auto;
+    background-color: var(--background);
 
     .grid-header {
         position: fixed;
@@ -54,6 +55,7 @@ export default styled.div`
                         }
 
                         &:first-child {
+                            color: var(--onSurface);
                             margin-bottom: 22px;
                         }
                     }
@@ -71,6 +73,8 @@ export default styled.div`
         grid-gap: 16px;
         grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
         grid-auto-rows: auto;
+
+        background-color: var(--background);
 
         &::after {
             content: '';

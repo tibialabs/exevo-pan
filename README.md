@@ -12,19 +12,18 @@ You can find the application [here](https://exevopan.com/).
 ## Current Features
 
 - List all available character auctions
-- Filter by server types and character stats
+- Filter by server types, character stats and more!
 - Rare items finder
 - Bookmark auctions
+- Dark Theme
 <p align="center">
-	<img src="https://i.imgur.com/M5MWUyw.png">
+	<img src="https://i.imgur.com/NirFT5A.png">
 </p>
 
 ## Future Features
 
-- More miscellaneous filters (rare names, quests/achievements, etc)
-- More detailed information (items, imbuiments, achievements, quests, transfer availability)
 - Search by nickname
-- Dark Theme
+- Notifications for auctions close to ending
 
 ## Char Bazaar Data
 

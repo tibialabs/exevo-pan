@@ -53,7 +53,8 @@ export default ({ backAction }) => {
         skillKey: new Set([]),
         itemSet: new Set([]),
         fav: false,
-        rareNick: false
+        rareNick: false,
+        soulwarFilter: false
     }
 
     const [filters, setFilters] = useState(initialFilterState);
@@ -112,16 +113,18 @@ export default ({ backAction }) => {
 
 
     useEffect(() => {
-        dispatchCharacterData({
-            type: 'APPLY_FILTERS',
-            filterState: filters,
-            initialData: {
-                initialCharacterData,
-                itemData,
-                indexedServerData,
-                favCharacters
-            }
-        });
+        setTimeout(() => {
+            dispatchCharacterData({
+                type: 'APPLY_FILTERS',
+                filterState: filters,
+                initialData: {
+                    initialCharacterData,
+                    itemData,
+                    indexedServerData,
+                    favCharacters
+                }
+            });
+        }, 150);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filters, initialCharacterData]);
 
@@ -481,6 +484,22 @@ export default ({ backAction }) => {
                         overrideStatus={filters.rareNick}
                     >
                         Rare nicknames
+                    </Chip>
+
+                    <Chip
+                        clickable
+                        onClick={useCallback(() => {
+                            if(filters.soulwarFilter && (filters.minLevel >= 400)) {
+                                updateFilterValue('minLevel', 2)
+                                updateFilterValue('soulwarFilter', false);
+                            } else {
+                                updateFilterValue('minLevel', 400)
+                                updateFilterValue('soulwarFilter', true);
+                            }
+                        }, [filters, updateFilterValue])}
+                        overrideStatus={filters.soulwarFilter && (filters.minLevel >= 400)}
+                    >
+                        Soulwar available 💀
                     </Chip>
                 </FilterGroup>
             </div>
